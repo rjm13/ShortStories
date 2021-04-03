@@ -53,7 +53,7 @@ const AudioStoryHome = ({navigation}) => {
     return (
         <View >
         <LinearGradient
-        colors={['purple', 'black', 'black']}
+        colors={['#a52bb0', 'black', 'black']}
         //style={styles.container}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -73,7 +73,7 @@ const AudioStoryHome = ({navigation}) => {
                     <Text style={{ 
                         color: SelectedId ===  1 ? '#fff' : '#ffffffa5',
                         marginHorizontal: 15, 
-                        fontSize: SelectedId ===  1 ? 20 : 17,
+                        fontSize: SelectedId ===  1 ? 22 : 17,
                         fontWeight: SelectedId === 1 ? 'bold' : 'normal',
                         borderBottomColor: '#fff',
                         //borderBottomWidth: SelectedId ===  1 ? 1 : 0,
@@ -86,7 +86,7 @@ const AudioStoryHome = ({navigation}) => {
                     <Text style={{ 
                         color: SelectedId ===  2 ? '#fff' : '#ffffffa5',
                         marginHorizontal: 15, 
-                        fontSize: SelectedId ===  2 ? 20 : 17,
+                        fontSize: SelectedId ===  2 ? 22 : 17,
                         fontWeight: SelectedId === 2 ? 'bold' : 'normal'
                     }}>
                         Liked
@@ -97,7 +97,7 @@ const AudioStoryHome = ({navigation}) => {
                     <Text style={{ 
                         color: SelectedId ===  3 ? '#fff' : '#ffffffa5',
                         marginHorizontal: 15, 
-                        fontSize: SelectedId ===  3 ? 20 : 17,
+                        fontSize: SelectedId ===  3 ? 22 : 17,
                         fontWeight: SelectedId === 3 ? 'bold' : 'normal'
                     }}>
                         Mine
@@ -108,7 +108,7 @@ const AudioStoryHome = ({navigation}) => {
                     <Text style={{ 
                         color: SelectedId ===  4 ? '#fff' : '#ffffffa5',
                         marginHorizontal: 15, 
-                        fontSize: SelectedId ===  4 ? 20 : 17,
+                        fontSize: SelectedId ===  4 ? 22 : 17,
                         fontWeight: SelectedId === 4 ? 'bold' : 'normal'
                     }}>                        
                         History

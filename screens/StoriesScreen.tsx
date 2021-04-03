@@ -24,15 +24,15 @@ const AudioStoryHome = ({navigation}) => {
           <View>
             <Searchbar
               placeholder="Search"
-              placeholderTextColor='#ffffffa5'
+              placeholderTextColor='#000000a5'
               onChangeText={onChangeSearch}
               value={searchQuery}
-              iconColor='#ffffffa5'
+              iconColor='#000000a5'
               style={{
                 height: 35,
                 marginHorizontal: 20,
                 borderRadius: 8,
-                backgroundColor: '#363636',
+                backgroundColor: '#e0e0e0a5',
               }}
               inputStyle={{fontSize: 16,}}
             />
@@ -44,7 +44,7 @@ const AudioStoryHome = ({navigation}) => {
     return (
         <View >
         <LinearGradient
-        colors={['purple', 'black', 'black']}
+        colors={['#a52bb0', 'black', 'black']}
         //style={styles.container}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -54,7 +54,7 @@ const AudioStoryHome = ({navigation}) => {
                             marginTop: 40, marginBottom: 20, marginHorizontal: 20}}>
             <View style={{ flexDirection: 'row'}}>
         
-                <Text style={{ color: 'white', marginHorizontal: 0, fontSize: 18, fontWeight: 'bold'}}>
+                <Text style={{ color: 'white', marginHorizontal: 0, fontSize: 22, fontWeight: 'bold'}}>
                     Discover Stories
                 </Text>
             </View>

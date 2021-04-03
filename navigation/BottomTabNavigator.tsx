@@ -46,7 +46,7 @@ export default function BottomTabNavigator() {
         name="Playlist"
         component={PlaylistNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-book-outline" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="disc" color={color} />,
         }}
       />
     </BottomTab.Navigator>

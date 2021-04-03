@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, ScrollView } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { Searchbar } from 'react-native-paper';
@@ -11,51 +11,27 @@ import {LinearGradient} from 'expo-linear-gradient';
 
 import AudioStoryFlatList from '../components/AudioStoryFlatList';
 import Trending from '../components/HorizList/Trending';
+import ForYouCarousel from '../components/HorizList/ForYouCarousel';
 
 const AudioStoryHome = ({navigation}) => {
 
-    function SearchBar () {
-
-        const [searchQuery, setSearchQuery] = useState('');
-      
-        const onChangeSearch = query => setSearchQuery(query);
-      
-        return (
-          <View>
-            <Searchbar
-              placeholder="Search"
-              onChangeText={onChangeSearch}
-              value={searchQuery}
-              iconColor='gray'
-              style={{
-                height: 35,
-                width: 280,
-                marginHorizontal: 20,
-                borderRadius: 8,
-                backgroundColor: '#a1a1a1',
-              }}
-              inputStyle={{fontSize: 16,}}
-            />
-          </View>
-        );
-      };
 
 
     return (
-        <View style={styles.container}>
+        
         <LinearGradient
-            colors={['purple', 'black', 'black']}
+            colors={['#a52bb0', '#2f2179', 'black']}
             //style={styles.container}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
         >
-          
+          <ScrollView style={styles.container}>
           <View style={{    flexDirection: 'row', justifyContent: 'space-between', 
                             marginTop: 40, marginBottom: 20, marginHorizontal: 20}}>
             <View style={{ flexDirection: 'row'}}>
 
-                <Text style={{ color: 'white', marginHorizontal: 20, fontSize: 16}}>
-                    Home
+                <Text style={styles.pageheader}>
+                    For you
                 </Text>
             </View>
             <View style={{ flexDirection: 'row'}}>
@@ -68,24 +44,65 @@ const AudioStoryHome = ({navigation}) => {
                 />
             </View>
           </View>
+
+          <View>
+            <ForYouCarousel />
+          </View>
         
           <View>
-            <Trending />
+              <Text style={styles.header}>
+                  Trending
+              </Text>
+              <Trending />
+          </View>
+
+          <View>
+              <Text style={styles.header}>
+                  Under 10 Minutes
+              </Text>
+              <Trending />
+          </View>
+
+          <View>
+              <Text style={styles.header}>
+                  Science Fiction
+              </Text>
+              <Trending />
+          </View>
+
+          <View>
+              <Text style={styles.header}>
+                  Mystery
+              </Text>
+              <Trending />
           </View>
 
             
            
             
-        
+        </ScrollView>
         </LinearGradient>
-        </View>
+        
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      
     },
+    header: {
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginHorizontal: 20,
+        marginTop: 20,
+    },
+    pageheader: {
+      color: '#fff',
+      fontSize: 22,
+      fontWeight: 'bold',
+      marginHorizontal: 20,
+  },
 });
 
 export default AudioStoryHome;

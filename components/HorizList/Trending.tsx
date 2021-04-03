@@ -47,6 +47,7 @@ const TrendingList = () => {
                 keyExtractor={item => item.id}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
+                
             />
         </View>
     );

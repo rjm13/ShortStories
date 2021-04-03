@@ -9,56 +9,56 @@ const genres = [
         genre: 'crime',
         icon: 'shoe-prints',
         iconcolor: '#ffffffa5',
-        boxcolor: 'cyan',
+        boxcolor: '#cac715',
     },
     {
         id: '2',
         genre: 'fantasy',
         icon: 'hat-wizard',
         iconcolor: '#ffffffa5',
-        boxcolor: 'cyan',
+        boxcolor: '#15ca54',
     },
     {
         id: '3',
         genre: 'mystery',
         icon: 'user-secret',
         iconcolor: '#ffffffa5',
-        boxcolor: 'cyan',
+        boxcolor: '#1579ca',
     },
     {
         id: '4',
         genre: 'comedy',
         icon: 'poo',
         iconcolor: '#ffffffa5',
-        boxcolor: 'cyan',
+        boxcolor: '#ca8215',
     },
     {
         id: '5',
         genre: 'heart warming',
         icon: 'heart',
         iconcolor: '#ffffffa5',
-        boxcolor: 'cyan',
+        boxcolor: '#c97f8b',
     },
     {
         id: '6',
         genre: 'life',
         icon: 'leaf',
         iconcolor: '#ffffffa5',
-        boxcolor: 'cyan',
+        boxcolor: '#15b8ca',
     },
     {
         id: '7',
         genre: 'after dark',
         icon: 'moon',
         iconcolor: '#ffffffa5',
-        boxcolor: 'cyan',
+        boxcolor: '#444d91',
     },
     {
         id: '8',
         genre: 'fan fiction',
         icon: 'quidditch',
         iconcolor: '#ffffffa5',
-        boxcolor: 'cyan',
+        boxcolor: '#a05ebf',
     },
 ]
 
@@ -119,10 +119,10 @@ const GenreFlatList = () => {
                             </Text>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 20}}>
 
-                                <View style={[styles.box, { backgroundColor: 'gold'}]}>
+                                <View style={[styles.box, { backgroundColor: '#15c7ca'}]}>
                                     <FontAwesome5 
                                     name='book-open'
-                                    color='#000000a5'
+                                    color='#000000'
                                     size={30}
                                     />
                                     <Text style={styles.title}>
@@ -130,10 +130,10 @@ const GenreFlatList = () => {
                                     </Text>
                                 </View>
 
-                                <View style={[styles.box, { backgroundColor: 'gold'}]}>
+                                <View style={[styles.box, { backgroundColor: 'pink'}]}>
                                     <FontAwesome5 
                                         name='book-reader'
-                                        color='#000000a5'
+                                        color='#000000'
                                         size={30}
                                     />
                                     <Text style={styles.title}>
@@ -152,9 +152,7 @@ const GenreFlatList = () => {
                 ListFooterComponent={ () => {
                     return (
                     <View style={{ height:  70, alignItems: 'center'}}>
-                        <Text style={{ color: 'white', margin: 20,}}>
-                            Load more
-                        </Text>
+                        
                     </View>
                     );
                 }}
@@ -180,7 +178,7 @@ const styles = StyleSheet.create ({
     },
       header: {
         color: '#fff',
-        fontSize: 22,
+        fontSize: 18,
         fontWeight: 'bold',
     },
     box: {
