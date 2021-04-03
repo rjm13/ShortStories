@@ -40,7 +40,7 @@ const AudioStoryHome = ({navigation}) => {
                     size={20}
                     color='#fff'
                     style={{ paddingLeft: 30 }}
-                    onPress={() => alert('Link to sexy Spotify Playlist')}
+                    onPress={() => navigation.navigate('ProfileScreen')}
                 />
             </View>
           </View>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, ImageBackground } from 'react-native';
 
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 import DATA from '../../data/dummyaudio';
 
 const Item = ({title, category, description, image, audioUri, author, narrator, time, liked, rating}) => {
@@ -12,10 +14,30 @@ const Item = ({title, category, description, image, audioUri, author, narrator, 
             style={styles.image}
             imageStyle={{ borderRadius: 16}}
           >
-             <Text style={styles.title}>
-              {title}
-            </Text> 
+                <View style={{ alignItems: 'center'}}>
+                    <View style={{flexDirection: 'row', backgroundColor: '#000000a5', alignItems: 'center', marginTop: 10, paddingHorizontal: 10, paddingVertical: 3, borderRadius: 15}}>
+                        <FontAwesome5 
+                            name='play'
+                            color='#fff'
+                            size={10}
+                        />
+                        <Text style={{ color: '#fff', fontSize: 13, paddingVertical: 0, marginLeft: 10}}>
+                            {time}
+                        </Text>
+                    </View>
+                </View>
+                <View style={{ backgroundColor: '#000000a5', borderBottomLeftRadius: 15, borderBottomRightRadius: 15}}>   
+                    <Text style={{ color: '#fff', paddingVertical: 5, paddingHorizontal: 10, fontSize: 12,}}>
+                        {title}
+                    </Text> 
+                </View>  
           </ImageBackground>
+
+          <View >
+                <Text style={{ color: '#fff', fontSize: 14,}}>
+                    {category}
+                </Text>
+          </View>
           
       </View>
     );
@@ -64,9 +86,10 @@ const styles = StyleSheet.create ({
       },
     image: {
         resizeMode: 'cover',
-        width: 140,
-        height: 100,
-        justifyContent: 'flex-end',
+        width: 180,
+        height: 160,
+        justifyContent: 'space-between',
+        marginBottom: 6,
       },
       title: {
         fontSize: 16,

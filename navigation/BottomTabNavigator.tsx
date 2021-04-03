@@ -9,6 +9,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import HomeScreen from '../screens/HomeScreen';
 import StoriesScreen from '../screens/StoriesScreen';
 import PlaylistScreen from '../screens/Playlistscreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
@@ -69,6 +70,11 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="HomeScreen"
         component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
