@@ -78,7 +78,7 @@ const AudioStoryHome = ({navigation}) => {
                         borderBottomColor: '#fff',
                         //borderBottomWidth: SelectedId ===  1 ? 1 : 0,
                     }}>
-                        Next
+                        Queued
                     </Text>
                 </TouchableWithoutFeedback>
 
