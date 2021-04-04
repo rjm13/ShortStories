@@ -7,9 +7,16 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 
 import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
+import NotificationSetting from '../screens/NotificationSetting';
+import Narrations from '../screens/NarrationsScreen';
+import History from '../screens/HistoryScreen';
+import Following from '../screens/FollowingScreen';
+
 import StoriesScreen from '../screens/StoriesScreen';
 import PlaylistScreen from '../screens/Playlistscreen';
-import ProfileScreen from '../screens/ProfileScreen';
+
 
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
@@ -75,6 +82,31 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name="EditProfileScreen"
+        component={EditProfileScreen}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name="NotificationSetting"
+        component={NotificationSetting}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name="Narrations"
+        component={Narrations}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name="History"
+        component={History}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name="Following"
+        component={Following}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>

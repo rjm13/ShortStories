@@ -12,6 +12,11 @@ export type BottomTabParamList = {
 export type TabOneParamList = {
   HomeScreen: undefined;
   ProfileScreen: undefined;
+  EditProfileScreen: undefined;
+  NotificationSetting: undefined;
+  Narrations: undefined;
+  History: undefined;
+  Following: undefined;
 };
 
 export type TabTwoParamList = {

@@ -9,7 +9,8 @@ export default {
           Home: {
             screens: {
               HomeScreen: 'one',
-              ProfileScreen: 'Profile'
+              ProfileScreen: 'Profile',
+              EditProfileScreen: 'EditProfile'
             },
           },
           Stories: {
