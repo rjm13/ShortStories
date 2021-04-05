@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ImageBackground, TouchableOpacity } from 'react-native';
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import DATA from '../../data/dummyaudio';
+import {useNavigation} from '@react-navigation/native';
 
 const Item = ({title, category, description, image, audioUri, author, narrator, time, liked, rating}) => {
+
+    const navigation = useNavigation();
 
     return (
         <View style={styles.containernew}>
@@ -15,16 +18,18 @@ const Item = ({title, category, description, image, audioUri, author, narrator, 
             imageStyle={{ borderRadius: 16}}
           >
                 <View style={{ alignItems: 'center'}}>
-                    <View style={{flexDirection: 'row', backgroundColor: '#000000a5', alignItems: 'center', marginTop: 10, paddingHorizontal: 10, paddingVertical: 3, borderRadius: 15}}>
-                        <FontAwesome5 
-                            name='play'
-                            color='#fff'
-                            size={10}
-                        />
-                        <Text style={{ color: '#fff', fontSize: 13, paddingVertical: 0, marginLeft: 10}}>
-                            {time}
-                        </Text>
-                    </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('AudioPlayer')}>
+                        <View style={{flexDirection: 'row', backgroundColor: '#000000a5', alignItems: 'center', marginTop: 10, paddingHorizontal: 10, paddingVertical: 3, borderRadius: 15}}>
+                            <FontAwesome5 
+                                name='play'
+                                color='#fff'
+                                size={10}
+                            />
+                            <Text style={{ color: '#fff', fontSize: 13, paddingVertical: 0, marginLeft: 10}}>
+                                {time}
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={{ backgroundColor: '#000000a5', borderBottomLeftRadius: 15, borderBottomRightRadius: 15}}>   
                     <Text style={{ color: '#fff', paddingVertical: 5, paddingHorizontal: 10, fontSize: 12,}}>

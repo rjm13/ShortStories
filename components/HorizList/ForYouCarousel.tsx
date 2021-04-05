@@ -161,7 +161,7 @@ const Item = ({title, category, description, image, audioUri, author, narrator, 
                                         </View>
 
                                         <View>
-                                            <TouchableOpacity onPress={() => navigation.navigate ('AudioPlay')}>
+                                            <TouchableOpacity onPress={() => navigation.navigate ('AudioPlayer')}>
                                                 <Text style={styles.playbutton}>
                                                     Play
                                                 </Text>

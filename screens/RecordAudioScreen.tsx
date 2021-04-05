@@ -1,6 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React, {useState, useEffect, useRef} from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, TextInput, Dimensions } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, TextInput, Dimensions, TouchableWithoutFeedback } from 'react-native';
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -8,11 +8,13 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Slider from '@react-native-community/slider';
 import {LinearGradient} from 'expo-linear-gradient';
 import { Audio } from 'expo-av';
-import { Modal, Portal, Provider } from 'react-native-paper';
+import { List, Modal, Portal, Provider } from 'react-native-paper';
 import ToggleSwitch from 'toggle-switch-react-native'
 import ModalDropdown from 'react-native-modal-dropdown';
 
 import { RootStackParamList } from '../types';
+import genres  from '../data/dummygenre';
+import { Item } from 'react-native-paper/lib/typescript/components/List/List';
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -33,7 +35,9 @@ function useInterval(callback, delay) {
 
 export default function RecordAudio({
   navigation,
-}: StackScreenProps<RootStackParamList, 'RecordAudio'>) {
+}: StackScreenProps<RootStackParamList, 'RecordAudio'>) {   
+  
+      const Genre = genres.map((item, index) => item.genre)
 
       //Toggle Switch
       const [isSwitchOn, setIsSwitchOn] = React.useState(false);
@@ -113,6 +117,8 @@ export default function RecordAudio({
       function SpiceRating (value) {
           setSpice(value);
       }
+
+
   return (
     <Provider>
     <View style={styles.container}>
@@ -122,7 +128,7 @@ export default function RecordAudio({
             <View style={{ alignItems: 'center', padding: 20, backgroundColor: '#363636', borderRadius: 15,}}>
             
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
-                <Text style={styles.title}>
+                <Text style={[styles.title, {textTransform: 'capitalize'}]}>
                    Story Title 
                 </Text>   
                 <View style={{ flexDirection: 'row'}}>
@@ -300,7 +306,7 @@ export default function RecordAudio({
 
             <View style={{ width: Dimensions.get('window').width, marginBottom: 20, }}>
                 <ModalDropdown 
-                  options={['Crime', 'Mystery', 'After Dark', 'Fantasy', 'Fan Fiction']}
+                  options={Genre}
                   defaultValue='Select category...'
                   defaultTextStyle={{ color: '#ffffffa5'}}
                   style={{ 
@@ -310,13 +316,14 @@ export default function RecordAudio({
                     paddingHorizontal: 20,
                     borderRadius: 10,
                   }}
-                  textStyle={{ color: 'cyan', fontSize: 14,}}
+                  textStyle={{ color: 'cyan', fontSize: 14, textTransform: 'capitalize',}}
                   dropdownStyle={{ 
                     backgroundColor: '#363636', 
                     width: '80%', 
                     borderWidth: 0,
-                    borderBottomRightRadius: 15,
-                    borderBottomLeftRadius: 15,
+                    borderRadius: 15,
+                    height: 280,
+                    marginTop: 10
                   }}
                   dropdownTextStyle={{ 
                     backgroundColor: 'transparent',
@@ -324,11 +331,14 @@ export default function RecordAudio({
                     fontSize: 14,
                     paddingHorizontal: 20,
                     paddingVertical: 15,
+                    textTransform: 'capitalize',
+                    
                   }}
                   dropdownTextHighlightStyle={{
                     color: 'cyan'
                   }}
                 />
+
             </View>
 
             <View style={{ alignItems: 'center'}}>

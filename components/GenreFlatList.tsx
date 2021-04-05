@@ -3,7 +3,9 @@ import { View, Text, StyleSheet, FlatList } from 'react-native';
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const genres = [
+import genres  from '../data/dummygenre';
+
+const genre = [
     {
         id: '1',
         genre: 'crime',

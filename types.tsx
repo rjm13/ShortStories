@@ -1,6 +1,7 @@
 export type RootStackParamList = {
   Root: undefined;
   RecordAudio: undefined;
+  AudioPlayer: undefined;
 };
 
 export type BottomTabParamList = {

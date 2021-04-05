@@ -4,6 +4,8 @@ import React, {useState} from 'react';
 import { ColorSchemeName, Appearance } from 'react-native';
 
 import RecordAudioScreen from '../screens/RecordAudioScreen';
+import AudioPlayer from '../screens/AudioPlayer';
+
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -33,6 +35,8 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="RecordAudio" component={RecordAudioScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name="AudioPlayer" component={AudioPlayer} options={{ title: 'Oops!' }} />
+
     </Stack.Navigator>
   );
 }
