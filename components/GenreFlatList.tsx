@@ -138,16 +138,18 @@ const GenreFlatList = () => {
                                     </View>
                                 </TouchableOpacity>
 
-                                <View style={[styles.box, { backgroundColor: 'pink'}]}>
-                                    <FontAwesome5 
-                                        name='book-reader'
-                                        color='#000000'
-                                        size={30}
-                                    />
-                                    <Text style={styles.title}>
-                                    Narrator
-                                    </Text>
-                                </View>
+                                <TouchableOpacity onPress={() => navigation.navigate('BrowseNarrator')}>
+                                    <View style={[styles.box, { backgroundColor: 'pink'}]}>
+                                        <FontAwesome5 
+                                            name='book-reader'
+                                            color='#000000'
+                                            size={30}
+                                        />
+                                        <Text style={styles.title}>
+                                        Narrator
+                                        </Text>
+                                    </View>
+                                </TouchableOpacity>
 
                             </View>
 

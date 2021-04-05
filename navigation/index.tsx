@@ -7,6 +7,9 @@ import RecordAudioScreen from '../screens/RecordAudioScreen';
 import AudioPlayer from '../screens/AudioPlayer';
 import UserScreen from '../screens/UserScreen';
 
+import SignUpScreen from '../screens/auth/SignUp';
+import SignInScreen from '../screens/auth/SignIn';
+
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -33,11 +36,15 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='SignUp'>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="RecordAudio" component={RecordAudioScreen} options={{ title: 'Oops!' }} />
       <Stack.Screen name="AudioPlayer" component={AudioPlayer} options={{ title: 'Oops!' }} />
       <Stack.Screen name="UserScreen" component={UserScreen} options={{ title: 'Oops!' }} />
+
+      <Stack.Screen name="SignUp" component={SignUpScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name="SignIn" component={SignInScreen} options={{ title: 'Oops!' }} />
+
 
 
     </Stack.Navigator>

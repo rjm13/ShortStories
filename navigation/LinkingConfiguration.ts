@@ -17,6 +17,7 @@ export default {
             screens: {
               StoriesScreen: 'two',
               BrowseAuthor: 'BrowseAuthor',
+              BrowseNarrator: 'BrowseNarrator'
             },
           },
           Playlist: {
@@ -29,6 +30,8 @@ export default {
       RecordAudio: '*',
       AudioPlayer: '*',
       UserScreen: '*',
+      SignUp: '*',
+      SignIn: '*',
     },
   },
 };

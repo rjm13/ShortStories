@@ -11,7 +11,7 @@ import {LinearGradient} from 'expo-linear-gradient';
 
 import FollowingList from '../components/FollowingList';
 
-const BrowseAuthor = ({navigation}) => {
+const BrowseNarrator = ({navigation}) => {
 
     function SearchBar () {
 
@@ -58,7 +58,7 @@ const BrowseAuthor = ({navigation}) => {
                     onPress={() => navigation.goBack()}
                 />
                 <Text style={{ color: 'white', marginHorizontal: 0, fontSize: 22, fontWeight: 'bold'}}>
-                    Authors
+                    Narrators
                 </Text>
           </View>
         
@@ -109,4 +109,4 @@ const styles = StyleSheet.create ({
   },
 });
 
-export default BrowseAuthor;
+export default BrowseNarrator;

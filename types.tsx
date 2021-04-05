@@ -3,6 +3,8 @@ export type RootStackParamList = {
   RecordAudio: undefined;
   AudioPlayer: undefined;
   UserScreen: undefined;
+  SignUp: undefined;
+  SignIn: undefined;
 };
 
 export type BottomTabParamList = {
@@ -24,6 +26,7 @@ export type TabOneParamList = {
 export type TabTwoParamList = {
   StoriesScreen: undefined;
   BrowseAuthor: undefined;
+  BrowseNarrator: undefined;
 };
 
 export type TabThreeParamList = {
