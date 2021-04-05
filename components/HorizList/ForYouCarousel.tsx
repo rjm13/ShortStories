@@ -69,9 +69,11 @@ const Item = ({title, category, description, image, audioUri, author, narrator, 
                                     size={12}
                                     color='#ffffffa5'
                                 />
-                                <Text style={styles.userId}>
-                                    {narrator}
-                                </Text> 
+                                <TouchableOpacity onPress={() => navigation.navigate('UserScreen')}>
+                                    <Text style={styles.userId}>
+                                        {narrator}
+                                    </Text> 
+                                </TouchableOpacity>
                             </View>
                             
                         </View>

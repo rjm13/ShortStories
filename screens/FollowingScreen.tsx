@@ -10,6 +10,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 import {LinearGradient} from 'expo-linear-gradient';
 
 import AudioStoryFlatList from '../components/AudioStoryFlatList';
+import FollowingList from '../components/FollowingList';
 
 const FollowingScreen = ({navigation}) => {
 
@@ -97,7 +98,7 @@ const FollowingScreen = ({navigation}) => {
             </View> */}
 
             <View style={{ alignItems: 'center', marginTop: 20, height: '86%'}}>
-                <AudioStoryFlatList />
+                <FollowingList />
             </View>
            
             

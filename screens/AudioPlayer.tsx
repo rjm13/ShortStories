@@ -9,6 +9,8 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
+import * as Animatable from 'react-native-animatable';
+
 const story = 
     {
         id: '1',
@@ -79,6 +81,12 @@ const AudioPlayer  = ({navigation}) => {
     function millisToMinutesAndSeconds () {
         let minutes = Math.floor(position / 60000);
         let seconds = ((position % 60000) / 1000);
+        return (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
+    } 
+    
+    function convertToTime () {
+        let minutes = Math.floor(slideLength / 60000);
+        let seconds = Math.floor((slideLength % 60000) / 1000);
         return (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
     }  
 
@@ -153,9 +161,13 @@ const AudioPlayer  = ({navigation}) => {
                     />
                 </View>
             </ImageBackground>
+            <Animatable.View 
+                animation='bounceInUp'
+                style={{flex: 5}}
+                >
             <LinearGradient 
                             colors={['#2f2179','black', '#000']}
-                            style={{elevation: 10, borderRadius: 20,paddingVertical: 5, paddingHorizontal: 20, flex: 5}}
+                            style={{ borderRadius: 20, paddingVertical: 5, paddingHorizontal: 20, flex: 5}}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 1 }}
             >
@@ -279,7 +291,7 @@ const AudioPlayer  = ({navigation}) => {
                         {millisToMinutesAndSeconds()}
                     </Text>
                     <Text style={{ fontSize: 18, marginBottom: 5, textAlign: 'center', color: 'white'}}>
-                        4:09
+                        {convertToTime()}
                     </Text>
                 </View>
                 <View>
@@ -301,6 +313,7 @@ const AudioPlayer  = ({navigation}) => {
             </View>
             </View>
         </LinearGradient> 
+        </Animatable.View>
         <StatusBar style='dark' />
         </View>
     );

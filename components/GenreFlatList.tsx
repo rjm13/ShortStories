@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { useNavigation } from '@react-navigation/native';
 
 import genres  from '../data/dummygenre';
 
@@ -95,6 +96,8 @@ const Item = ({genre, icon, iconcolor, boxcolor}) => {
 }
 
 const GenreFlatList = () => {
+
+    const navigation = useNavigation();
    
     const renderItem = ({ item }) => (
 
@@ -114,6 +117,7 @@ const GenreFlatList = () => {
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
                 ListHeaderComponent={ () => {
+
                     return (
                         <View style={{ marginTop: 20}}>
                             <Text style={styles.header}>
@@ -121,16 +125,18 @@ const GenreFlatList = () => {
                             </Text>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 20}}>
 
-                                <View style={[styles.box, { backgroundColor: '#15c7ca'}]}>
-                                    <FontAwesome5 
-                                    name='book-open'
-                                    color='#000000'
-                                    size={30}
-                                    />
-                                    <Text style={styles.title}>
-                                        Author
-                                    </Text>
-                                </View>
+                                <TouchableOpacity onPress={() => navigation.navigate('BrowseAuthor')}>
+                                    <View style={[styles.box, { backgroundColor: '#15c7ca'}]}>
+                                        <FontAwesome5 
+                                        name='book-open'
+                                        color='#000000'
+                                        size={30}
+                                        />
+                                        <Text style={styles.title}>
+                                            Author
+                                        </Text>
+                                    </View>
+                                </TouchableOpacity>
 
                                 <View style={[styles.box, { backgroundColor: 'pink'}]}>
                                     <FontAwesome5 

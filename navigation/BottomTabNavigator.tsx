@@ -17,6 +17,8 @@ import Following from '../screens/FollowingScreen';
 import StoriesScreen from '../screens/StoriesScreen';
 import PlaylistScreen from '../screens/Playlistscreen';
 
+import BrowseAuthor from '../screens/BrowseAuthor';
+
 
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
@@ -121,6 +123,11 @@ function StoriesNavigator() {
       <StoriesStack.Screen
         name="StoriesScreen"
         component={StoriesScreen}
+        options={{ headerShown: false }}
+      />
+      <StoriesStack.Screen
+        name="BrowseAuthor"
+        component={BrowseAuthor}
         options={{ headerShown: false }}
       />
     </StoriesStack.Navigator>
