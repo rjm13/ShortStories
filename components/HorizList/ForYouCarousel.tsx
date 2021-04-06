@@ -55,7 +55,7 @@ const Item = ({title, category, description, image, audioUri, author, narrator, 
                             </Text>
                             
                             
-                            <View style={{ flexDirection: 'row', marginTop: 0, alignItems: 'center'}}>
+                            <View style={{ flexDirection: 'row', marginTop: 4, alignItems: 'center'}}>
                                 <FontAwesome5 
                                     name='book-open'
                                     size={12}
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
     category: {
         fontSize: 14,
         color: 'cyan',
-        fontStyle: 'italic',
+        //fontStyle: 'italic',
         //marginVertical: 3,
 
     },

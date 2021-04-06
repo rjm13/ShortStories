@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions, TextInput } from 'react-native';
+import {View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const SignIn = ({navigation}) => {
+const ForgotPassword = ({navigation}) => {
 
     return (
         <View style={styles.container}>
@@ -26,50 +26,68 @@ const SignIn = ({navigation}) => {
                             />
                         </View>
                     </View>
+                </View>
 
+                <TouchableOpacity>
+                    <View style={styles.button}>
+                        <Text style={styles.buttontext}>
+                            Send Reset Code
+                        </Text>
+                    </View>
+                </TouchableOpacity>
+
+                <View style={{ margin: 20}}>
                     <View>
                         <Text style={styles.header}>
-                            Password
+                            Confirmation Code
                         </Text>
                         <View style={styles.inputfield}>
                             <TextInput 
-                                placeholder='....'
+                                placeholder='Check email for code'
                                 placeholderTextColor='#ffffffa5'
                                 style={styles.textInputTitle}
                                 maxLength={30}
                             />
                         </View>
                     </View>
+                </View>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-                        <View style={{ borderBottomWidth: 1, borderColor: '#ffffffa5', marginBottom: 0, marginTop: 30, marginHorizontal: 20}}>
-                            <Text style={{ color: '#fff', alignSelf: 'center', margin: 20}}>
-                                Forgot Password
-                            </Text>
+                <View style={{ marginBottom: 20, marginHorizontal: 20}}>
+                    <View>
+                        <Text style={styles.header}>
+                            New Password
+                        </Text>
+                        <View style={styles.inputfield}>
+                            <TextInput 
+                                placeholder='Create a new password'
+                                placeholderTextColor='#ffffffa5'
+                                style={styles.textInputTitle}
+                                maxLength={30}
+                            />
                         </View>
-                    </TouchableOpacity>
-
+                    </View>
                 </View>
 
                 <TouchableOpacity>
                     <View style={styles.button}>
                         <Text style={styles.buttontext}>
-                            Sign In
+                            Reset Password
                         </Text>
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate('SignUp') }>
+                <TouchableOpacity onPress={() => navigation.navigate('SignIn') }>
                     <Text style={{ color: '#fff', alignSelf: 'center', margin: 20}}>
-                        Create an account
+                        Go Back
                     </Text>
                 </TouchableOpacity>
+
             </LinearGradient>
         </View>
     );
 }
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         //alignItems: 'center',
@@ -108,4 +126,4 @@ const styles = StyleSheet.create ({
     },
 });
 
-export default SignIn;
+export default ForgotPassword;

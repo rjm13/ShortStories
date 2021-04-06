@@ -6,6 +6,25 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 
+const people = 
+    {
+        id: '1',
+        name: 'Randy Myers',
+        email: '',
+        pseudonym: 'AnnonymousTexan',
+        avatar: { uri: 'https://scontent.fhou1-2.fna.fbcdn.net/v/t1.6435-9/100657069_10222349946436703_2222904085466578944_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=LWvZcDEKGwcAX9em-6Y&_nc_ht=scontent.fhou1-2.fna&oh=927973b953b559de666741e10658d9bf&oe=608F40FF'},
+        gender: 'male',
+        dob: '',
+        bio: 'Houston based writer. I usually stick with science fiction and mystery, but also dabble in the occasional fan fiction.',
+        following: [],
+        followers: [],
+        narrations: ['1', '2'],
+        author: ['3', '5'],
+        finishedStory: [],
+        liked: [],
+        queued: [],
+    }
+
 
 const UserScreen = ({navigation}) => {
 
@@ -59,7 +78,7 @@ const UserScreen = ({navigation}) => {
 
                 <View style={{ alignItems: 'center'}}>
                     <Image 
-                        source={{ uri: 'https://scontent.fhou1-2.fna.fbcdn.net/v/t1.6435-9/100657069_10222349946436703_2222904085466578944_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=LWvZcDEKGwcAX9em-6Y&_nc_ht=scontent.fhou1-2.fna&oh=927973b953b559de666741e10658d9bf&oe=608F40FF'}}
+                        source={people.avatar}
                         style={{
                             width: 120,
                             height: 120,
@@ -72,7 +91,13 @@ const UserScreen = ({navigation}) => {
 
                 <View style={{ alignItems: 'center'}}>
                     <Text style={styles.header}>
-                        Randy Myers
+                        {people.name}
+                    </Text>
+                </View>
+
+                <View style={{ alignItems: 'center', marginHorizontal: 20,}}>
+                    <Text style={{ color: '#ffffffa5'}}>
+                        {people.bio}
                     </Text>
                 </View>
 

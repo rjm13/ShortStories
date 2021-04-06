@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     category: {
         fontSize: 14,
         color: 'cyan',
-        fontStyle: 'italic',
+        //fontStyle: 'italic',
         marginVertical: 3,
 
     },

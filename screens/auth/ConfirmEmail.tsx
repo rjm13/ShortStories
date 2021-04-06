@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions, TextInput } from 'react-native';
+import {View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const SignIn = ({navigation}) => {
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
+const ConfirmEmail = ({navigation}) => {
 
     return (
         <View style={styles.container}>
@@ -12,64 +14,55 @@ const SignIn = ({navigation}) => {
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
             >
+                
+                    <View style={{ position: 'absolute', top: 50, left: 30}}>
+                        <TouchableOpacity onPress={() => navigation.navigate('SignUp') }>
+                            <FontAwesome5 
+                                name='chevron-left'
+                                color='#fff'
+                                size={20}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                
+                
+
                 <View style={{ margin: 20}}>
                     <View>
                         <Text style={styles.header}>
-                            Email
+                            Confirmation Code
                         </Text>
                         <View style={styles.inputfield}>
                             <TextInput 
-                                placeholder='....'
+                                placeholder='Check email for code'
                                 placeholderTextColor='#ffffffa5'
                                 style={styles.textInputTitle}
                                 maxLength={30}
                             />
                         </View>
                     </View>
-
-                    <View>
-                        <Text style={styles.header}>
-                            Password
-                        </Text>
-                        <View style={styles.inputfield}>
-                            <TextInput 
-                                placeholder='....'
-                                placeholderTextColor='#ffffffa5'
-                                style={styles.textInputTitle}
-                                maxLength={30}
-                            />
-                        </View>
-                    </View>
-
-                    <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-                        <View style={{ borderBottomWidth: 1, borderColor: '#ffffffa5', marginBottom: 0, marginTop: 30, marginHorizontal: 20}}>
-                            <Text style={{ color: '#fff', alignSelf: 'center', margin: 20}}>
-                                Forgot Password
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
-
                 </View>
 
                 <TouchableOpacity>
                     <View style={styles.button}>
                         <Text style={styles.buttontext}>
-                            Sign In
+                            Confirm Account
                         </Text>
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate('SignUp') }>
+                <TouchableOpacity>
                     <Text style={{ color: '#fff', alignSelf: 'center', margin: 20}}>
-                        Create an account
+                        Resend code
                     </Text>
                 </TouchableOpacity>
+
             </LinearGradient>
         </View>
     );
 }
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         //alignItems: 'center',
@@ -108,4 +101,4 @@ const styles = StyleSheet.create ({
     },
 });
 
-export default SignIn;
+export default ConfirmEmail;

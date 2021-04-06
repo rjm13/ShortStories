@@ -75,7 +75,7 @@ const SignUp = ({navigation}) => {
 
                 </View>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('ConfirmEmail')}>
                     <View style={styles.button}>
                         <Text style={styles.buttontext}>
                             Create Account

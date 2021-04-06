@@ -32,6 +32,8 @@ export default {
       UserScreen: '*',
       SignUp: '*',
       SignIn: '*',
+      ForgotPassword: '*',
+      ConfirmEmail: '*',
     },
   },
 };
